@@ -10,6 +10,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 const cookieParser = require('cookie-parser');
 app.use(cookieParser()); // 啟用 Cookie 解析
+const port = process.env.PORT || 3000;
+
 const secretKey = 'your_secret_key';
 const { poolPromise, sql } = require('./db'); // 將 poolPromise 和 sql 從 db.js 引入
 require('dotenv').config();
@@ -111,6 +113,6 @@ app.get('/logout', (req, res) => {
     res.redirect('/'); // 重定向回首頁
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server is running on http://localhost:3000');
 });
