@@ -1,0 +1,7 @@
+
+CREATE TABLE powerBIusers (
+    id INT IDENTITY(1,1) PRIMARY KEY,  -- 自動增量主鍵
+    username NVARCHAR(255) NOT NULL UNIQUE, -- 使用 NVARCHAR 支援 Unicode
+    password NVARCHAR(255) NOT NULL,  -- 密碼字段
+    created_at DATETIME DEFAULT GETDATE()  -- 設定預設值為當前日期時間
+);
