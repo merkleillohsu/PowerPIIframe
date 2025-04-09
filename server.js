@@ -96,12 +96,12 @@ app.get('/register', (req, res) => {
     res.render('register'); // 渲染 register.ejs
 });
 
-app.get('/dashboard', authenticateToken, (req, res) => {
+app.get('/dashboard'/*,authenticateToken*/, (req, res) => {
     res.render('dashboard'); // 渲染 dashboard.ejs
 });
 
 app.get('/report1', (req, res) => {
-    res.render('report', { reportId: 'your_report1_embed_url' });
+    res.render('report', { reportId: 'https://app.powerbi.com/reportEmbed?reportId=ed728c4b-7e05-44d9-92a0-c6cfc0e11838&autoAuth=true&ctid=81fa766e-a349-4867-8bf4-ab35e250a08f' });
 });
 
 app.get('/report2', (req, res) => {
